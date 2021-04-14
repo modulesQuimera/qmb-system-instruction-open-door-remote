@@ -1,0 +1,25 @@
+{
+  "name": "qmb-system-instruction-open-door-remote",
+  "version": "1.0.0",
+  "description": "System instruction of Open door remote",
+  "main": "open_door_remote.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modulesQuimera/qmb-system-instruction-open-door-remote.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/modulesQuimera/qmb-system-instruction-open-door-remote/issues"
+  },
+  "homepage": "https://github.com/modulesQuimera/qmb-system-instruction-open-door-remote#readme",
+  "node-red" : {
+    "nodes": {
+        "open_door_remote": "open_door_remote.js"
+    }
+  }
+}

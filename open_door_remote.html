@@ -1,0 +1,108 @@
+<script type="text/javascript">
+	RED.nodes.registerType('open_door_remote',{
+		category: 'System instruction',
+		color: '#ff4800',
+		defaults: {
+            name:{ value: "" },
+            pulse_door_one: { value: ""},
+            pulse_door_two: { value: ""},
+            pulse_interval: { value: ""},
+            pulse_length: { value: ""},
+            edge: { value: ""}
+		},
+		inputs:1,
+		outputs:1,
+		icon: "parser-json.svg",
+		label: function() {
+			return this.name? "Open Door Remote - " + this.name: "Open Door Remote";
+		},
+        paletteLabel: "Open Door Remote",
+		oneditprepare: function() {
+            var node = this;
+
+            //DAQUI PRA BAIXO TUDO IGUAL
+            
+		}
+	});	
+</script>
+
+<style>
+    
+	label{ width: 100% !important; margin-bottom: 2px !important; }
+	.columm{ display: flex !important; flex-direction: column !important; }
+	hr { width: 30% !important; float: left !important; }
+	.hr-div-compare{ display: flex !important; justify-content: space-between !important; align-items: center; }
+	.optional{ height: max-content !important; margin-top: 10px !important; }
+	.descript{ text-align: center; }
+	.columm-50{ display: flex !important; flex-direction: column !important; width: 50% !important; float: left !important; }
+    .columm-30{ display: flex !important; flex-direction: column !important; width: 30% !important; float: left !important; }
+    .columm-70{ display: flex !important; flex-direction: column !important; width: 70% !important; float: left !important; }
+    .columm-100{ display: flex !important; flex-direction: column !important; width: 100% !important; float: left !important; }
+    .hr-div-get{ display: flex !important; justify-content: space-between !important; margin-top: 250px !important; }
+    .optional{ height: max-content !important; margin-top: 10px !important; }
+    .descript{ text-align: center; }
+    .descript-div{ max-width: 444px !important; }
+    span.red-ui-typedInput-type-label { width: 250px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .btn-aln{ display: flex !important; flex-direction: row-reverse !important; align-content: center; align-items: flex-end; }
+    #myCallbacks { padding: 12px; background: #e0e0e0; border-radius: 4px; flex: 1; width: 100%; box-sizing: border-box;}
+    .Combo { padding: 12px; background: #e0e0e0; border-radius: 4px; flex: 1; width: 100%; box-sizing: border-box; box-shadow: inset 0px 0px 2px 1px #a2a0a0;}
+    .innerCombo { margin: 6px 0px; box-shadow: 0px 0px 2px 1px #c7c7c7; padding: 10px; }
+    .but{ position: absolute; right: 0%; bottom: -14px; background: #e0e0e0; padding: 8px; border-radius: 4px; cursor: pointer; user-select: none; }
+    .form-row-luck { display: flex; flex-direction: row;  margin-bottom: 12px}
+    .triforce { display: flex; justify-content: space-between; }
+    ul { padding: 0 !important; margin: 0 !important; }
+    ul.checks { width: 75px; display: flex; flex-direction: column; justify-content: center; }
+    ul.checks li { margin-bottom: 4px; display: flex; flex-direction: row; align-items: center; }
+    .container-tester2 { display:flex; width: 100%; flex-direction: column; }
+
+</style>
+
+<script type="text/html" data-template-name="open_door_remote">
+    <div class="container-tester2">
+        <div class="form-row columm descript-div">
+            <strong class="descript">
+                Utilizado para verificar se os sensor das portas estão funcionando com sucesso.
+            </strong>
+        </div>
+
+        <div style=" position: relative; display:flex;">
+            <div class="form-row columm-70">
+                <label style="width: 50% !important;" for="node-input-name" ><i class="fa fa-tag"></i> Identification Note</label>
+                <input type="text" id="node-input-name" placeholder="Name" style="width: 100%">
+            </div>
+        </div>
+        <div class="hr-div-compare">
+            <hr>Open Door Remote<hr>
+        </div>
+        <div class='columm' style='display: flex;'>
+            <div class='form-row columm-70'>
+                <label for='node-input-pulse_door_one'><i class="fa fa-envelope" aria-hidden="true"></i> Pulse Door 1</label>
+                <input min="2" type='number' id='node-input-pulse_door_one' placeholder='Pulse Door 1' style='width:100%;'>
+            </div>
+            <div class='form-row columm-70'>
+                <label for='node-input-pulse_door_two'><i class="fa fa-envelope" aria-hidden="true"></i> Pulse Door 2</label>
+                <input min="1" type='number' id='node-input-pulse_door_two' placeholder='Pulse Door 2' style='width:100%;'>
+            </div>
+            <div class='form-row columm-70'>
+                <label for='node-input-pulse_length'><i class="fa fa-envelope" aria-hidden="true"></i> Pulse Length</label>
+                <input min="1" type='number' id='node-input-pulse_length' placeholder='Pulse Interval' style='width:100%;'>
+            </div>
+            <div class='form-row columm-70'>
+                <label for='node-input-pulse_interval'><i class="fa fa-envelope" aria-hidden="true"></i> Pulse Interval</label>
+                <input min="1" type='number' id='node-input-pulse_interval' placeholder='Pulse Interval' style='width:100%;'>
+            </div>
+            <div class="form-row columm-30" style="float: left;">
+                <label for="node-input-edge"><i class="fa fa-sliders"></i> Edge</label>
+                <select id="node-input-edge" style="width: 70%;">
+                    <option value="true">true</option> 
+                    <option value="false">false</option>
+                </select>
+            </div>
+        </div>
+        
+    </div>
+</script>
+
+<script type="text/html" data-help-name="open_door_remote">
+  	<p>Instructions of systen for BURNIN.</p>
+</script>
