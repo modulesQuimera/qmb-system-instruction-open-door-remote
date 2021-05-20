@@ -1,6 +1,6 @@
 {
   "name": "qmb-system-instruction-open-door-remote",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "System instruction of Open door remote",
   "main": "open_door_remote.js",
   "scripts": {

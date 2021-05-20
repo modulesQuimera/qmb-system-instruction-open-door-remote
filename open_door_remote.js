@@ -19,11 +19,11 @@ module.exports = function(RED) {
                 action: "open_door_remote",
                 payload: {
                     attributes: [
-                        { pulse_door_1:  parseInt(node.pulse_door_one) },
-                        { pulse_door_2:  parseInt(node.pulse_door_two) },
-                        { pulse_length:  parseInt(node.pulse_length) },
-                        { pulse_interval:  parseInt(node.pulse_interval) },
-                        { edge: node.edge === "true" ? true : false }
+                        { name: "pulse_door_1", value: parseInt(node.pulse_door_one) },
+                        { name: "pulse_door_2", value: parseInt(node.pulse_door_two) },
+                        { name: "pulse_length", value: parseInt(node.pulse_length) },
+                        { name: "pulse_interval", value: parseInt(node.pulse_interval) },
+                        { name: "edge", value: node.edge === "true" ? true : false }
                     ],
                 }
             };
